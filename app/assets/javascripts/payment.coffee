@@ -2,12 +2,21 @@
 # All this logic will automatically be available in application.js.
 # You can use CoffeeScript in this file: http://coffeescript.org/
 paypal.Button.render {
-  env: 'sandbox'
-  payment: ->
-    # Set up the payment here, when the buyer clicks on the button
-    return
-  onAuthorize: (data, actions) ->
-    # Execute the payment here, when the buyer approves the transaction
-    return
+	env: 'sandbox'
+	client:
+		sandbox: ''
+		production: ''
+	payment: ->
+		env = @props.env
+		client = @props.client
+		paypal.rest.payment.create env, client, transactions: [ { amount:
+			total: '1.00'
+			currency: 'USD' } ]
+	commit: true
+	onAuthorize: (data, actions) ->
+		# Optional: display a confirmation page here
+		actions.payment.execute().then ->
+			# Show a success page to the buyer
+			return
 
 }, '#paypal-button'

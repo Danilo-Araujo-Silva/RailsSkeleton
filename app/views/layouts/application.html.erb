@@ -1,14 +1,83 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <title>RailsSkeleton</title>
-    <%= csrf_meta_tags %>
+<% if content_for?(:all) %>
+  <%= yield(:all) %>
+<% else %>
+  <% if content_for?(:doctype) %>
+    <%= yield(:doctype) %>
+  <% else %>
+    <!DOCTYPE html>
+  <% end %>
+  <% if content_for?(:html) %>
+    <%= yield(:html) %>
+  <% else %>
+    <html>
+      <% if content_for?(:head) %>
+        <%= yield(:head) %>
+      <% else %>
+        <head>
+          <title>
+            <% if content_for?(:title) %>
+              <%= yield(:title) %>
+            <% else %>
+              <%= 'Skeleton' %>
+            <% end %>
+          </title>
 
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-  </head>
+          <% if content_for?(:head_meta) %>
+            <%= yield(:head_meta) %>
+          <% else %>
+            <% if content_for?(:head_meta_before) %>
+              <%= yield(:head_meta_before) %>
+            <% else %>
+            <% end %>
+            <%= csrf_meta_tags %>
+            <% if content_for?(:head_meta_after) %>
+              <%= yield(:head_meta_after) %>
+            <% else %>
+            <% end %>
+          <% end %>
 
-  <body>
-    <%= yield %>
-  </body>
-</html>
+          <% if content_for?(:head_css) %>
+            <%= yield(:head_css) %>
+          <% else %>
+            <% if content_for?(:head_css_before) %>
+              <%= yield(:head_css_before) %>
+            <% else %>
+            <% end %>
+              <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+            <% if content_for?(:head_css_after) %>
+              <%= yield(:head_css_after) %>
+            <% else %>
+            <% end %>
+          <% end %>
+
+          <% if content_for?(:head_js) %>
+            <%= yield(:head_js) %>
+          <% else %>
+            <% if content_for?(:head_js_before) %>
+              <%= yield(:head_js_before) %>
+            <% else %>
+            <% end %>
+              <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+            <% if content_for?(:head_js_after) %>
+              <%= yield(:head_js_after) %>
+            <% else %>
+            <% end %>
+          <% end %>
+
+          <% if content_for?(:head_other) %>
+            <%= yield(:head_other) %>
+          <% else %>
+          <% end %>
+        </head>
+      <% end %>
+
+      <% if content_for?(:body) %>
+        <%= yield(:body) %>
+      <% else %>
+        <body class="<%= controller_name %> <%= action_name %>">
+          <%= yield %>
+        </body>
+      <% end %>
+    </html>
+  <% end %>
+<% end %>

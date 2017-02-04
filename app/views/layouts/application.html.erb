@@ -51,8 +51,6 @@
             <% else %>
             <% end %>
               <%= stylesheet_link_tag  'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-              <link rel="stylesheet" href="css/normalize.min.css">
-              <link rel="stylesheet" href="css/main.css">
             <% if content_for?(:head_css_after) %>
               <%= yield(:head_css_after) %>
             <% else %>

@@ -1,0 +1,25 @@
+{
+  "name": "rails_skeleton",
+  "version": "0.5.0",
+  "description": "A Ruby on Rails skeleton application proposal.",
+  "main": "temp/index.js",
+  "directories": {
+    "test": "temp/test"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Danilo-Araujo-Silva/RailsSkeleton.git"
+  },
+  "author": "Danilo Araújo Silva",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Danilo-Araujo-Silva/RailsSkeleton/issues"
+  },
+  "homepage": "https://github.com/Danilo-Araujo-Silva/RailsSkeleton#readme",
+  "devDependencies": {
+    "@types/node": "^7.0.5"
+  }
+}

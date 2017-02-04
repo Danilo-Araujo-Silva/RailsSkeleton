@@ -9,6 +9,7 @@ A Ruby on Rails skeleton application proposal.
 - rvm install ruby --latest
 - gem install rails
 - gem update
+- npm install
 
 <!---
 This README would normally document whatever steps are necessary to get the

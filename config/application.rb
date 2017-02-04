@@ -11,7 +11,11 @@ module RailsSkeleton
     # Settings in config/environments/* take precedence over those specified here.
     # Application configuration should go into files in config/initializers
     # -- all .rb files in that directory are automatically loaded.
+    
+    # Enable TypeScript as the default javascript engine.
     config.app_generators.javascript_engine :typescript
-    config.assets.enabled = true
+
+	# Enable the asset pipeline
+	config.assets.enabled = true
   end
 end

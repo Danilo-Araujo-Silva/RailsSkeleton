@@ -15,4 +15,5 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require initialzr/initializr-plugins
+//= require home.js.ts
 //= require_tree .

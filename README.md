@@ -10,6 +10,8 @@ A Ruby on Rails skeleton application proposal.
 - gem install rails
 - gem update
 - npm install
+- rails secret
+- RAILS_ENV=production SECRET_KEY_BASE={secret key here} RAILS_SERVE_STATIC_FILES=true  bin/rails server
 
 <!---
 This README would normally document whatever steps are necessary to get the

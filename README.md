@@ -1,6 +1,14 @@
 # Rails Skeleton
 
-A Ruby on Rails skeleton application proposal.
+A skeleton propostal to Ruby on Rails applications.
+
+In this skeleton we have:
+- Ruby on Rails 5
+- TypeScript instead of CoffeeScript (already configured and ready to use)
+- HTML5 Boilerplate best practices already included
+- A great improvement in the `application.html.erb`
+  (with the option to overrides several sections of the page
+  and not the body only)
 
 ## Installation
 
@@ -10,6 +18,8 @@ A Ruby on Rails skeleton application proposal.
 - npm install
 
 ### Detailed Installation
+If you have Ruby, Rails, NPM and NodeJS already installed
+you probably can jump to the next section.
 
 #### Install Latest Ruby
 If you don't have the latest ruby yet you can install it using rvm.
@@ -66,6 +76,13 @@ can do this as follows:
 
 - npm install -g @types/node typescript
    - Maybe `sudo` is needed to run the previous command.
+   
+## Usage
+### Development Mode
+- bin/rails server
+### Production Mode
+- RAILS_ENV=production rake secret
+ - This secret will be used in the following steps.
 
 
 <!---

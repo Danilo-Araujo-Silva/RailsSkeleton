@@ -28,5 +28,8 @@
   "bugs": {
     "url": "https://github.com/Danilo-Araujo-Silva/RailsSkeleton/issues"
   },
-  "homepage": "https://github.com/Danilo-Araujo-Silva/RailsSkeleton#readme"
+  "homepage": "https://github.com/Danilo-Araujo-Silva/RailsSkeleton#readme",
+  "dependencies": {
+    "@types/node": "^7.0.5"
+  }
 }

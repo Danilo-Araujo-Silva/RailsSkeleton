@@ -13,4 +13,4 @@
 //= require jquery
 //= require jquery_ujs
 //= require turbolinks
-//= require_tree .
+//= require modernizr/2.8.3/modernizr-2.8.3-respond-1.4.2.min

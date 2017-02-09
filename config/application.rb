@@ -14,7 +14,7 @@ module RailsSkeleton
 
     #Typescript
     TypeScript::Src.use_external_tsc = true
-    Typescript::Rails::Compiler.default_options = %w(--lib es7)
+    Typescript::Rails::Compiler.default_options = %w(--lib ES7,DOM)
     config.app_generators.javascript_engine :typescript
     config.assets.enabled = true
   end

@@ -14,6 +14,7 @@ In this skeleton we have:
 
 ### Simple Installation
 - git clone https://github.com/Danilo-Araujo-Silva/RailsSkeleton.git
+- cd RailsSkeleton
 - bundle install
 - npm install
 
@@ -78,8 +79,10 @@ can do this as follows:
    - Maybe `sudo` is needed to run the previous command.
    
 ## Usage
+
 ### Development Mode
 - bin/rails server
+
 ### Production Mode
 - RAILS_ENV=production bin/rake secret
  - This secret will be used in the following steps.

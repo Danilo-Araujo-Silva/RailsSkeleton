@@ -1,14 +1,18 @@
 # Rails Skeleton
 
-A skeleton propostal to Ruby on Rails applications.
+A skeleton proposal to Ruby on Rails applications.
 
 In this skeleton we have:
 - Ruby on Rails 5
-- TypeScript instead of CoffeeScript (already configured and ready to use)
-- HTML5 Boilerplate best practices already included (TODO yet)
+  - Latest Ruby on Rails
+- TypeScript
+  - TypeScript is used instead of CoffeeScript (configured and ready to use)
+- HTML5 Boilerplate
+  - best practices already included
 - A great improvement in the `application.html.erb`
   (with the option to overrides several sections of the page
-  and not the body only) (TODO yet)
+  and not the body only)
+- Auto-reloading techniques with livereload, guard and guard-livereload
 
 ## Installation
 

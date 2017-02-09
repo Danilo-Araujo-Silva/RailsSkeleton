@@ -4,7 +4,17 @@ A Ruby on Rails skeleton application proposal.
 
 ## Installation
 
-### Install latest ruby
+### Simple Installation
+- git clone https://github.com/Danilo-Araujo-Silva/RailsSkeleton.git
+- bundle install
+- npm install
+
+### Detailed Installation
+
+#### Install Latest Ruby
+If you don't have the latest ruby yet you can install it using rvm.
+The official documentation is [here](https://rvm.io/).
+
 - Add rvm keys:
   - gpg --keyserver hkp://keys.gnupg.net --recv-keys 409B6B1796C275462A1703113804BB82D39DC0E3
 - Install rvm:
@@ -12,27 +22,50 @@ A Ruby on Rails skeleton application proposal.
 - Install the latest ruby:
   - rvm install ruby --latest
   
-### Install latest rails
-- Install rails:
-  - gem install rails
-  
-### Update all gems
-- Update all gems:
-  - gem update
-  
-### Install latest npm
-- Install latest npm:
-  - npm install npm@latest -g
+#### Install Latest Rails
+If you don't have rails yet you can install it as follows:
 
-### Install latest NodeJS
-- Install latest NodeJS:
-  - sudo npm cache clean -f
-  - sudo npm install -g n
-  - sudo n stable
+- gem install rails
+  
+#### Update All Gems
+If would like to update all your gems first you can do it as follows:
 
-### Install npm dependencies:
- - npm install
- - npm install -g @types/node typescript # (maybe sudo is needed.)
+- gem update
+
+### Install NodeJS
+If you don't have NodeJS and NPM installed yet you can follow
+[these instructions](https://nodejs.org/en/download/package-manager/) in the
+official documentation.
+
+#### Install Latest NPM
+If you already have npm installed and you would like update it to the latest
+version you can do it as follows:
+
+- npm install npm@latest -g
+
+#### Install Latest NodeJS
+If you already have npm installed and you would like to update the NodeJS to the
+latest version you can do it as follows:
+
+- sudo npm cache clean -f
+- sudo npm install -g n
+- sudo n stable
+
+Important! The option `-f` is used to force clean the npm cache. Take care about it.
+Anyway, I usually do this when I would like to install the latest NodeJS.
+
+#### Install NPM Dependencies:
+These instructions is used to install the local npm dependencies. The dependencies
+will be placed in the `node_modules` folder (already ignored by `.gititnore`).
+
+- npm install
+  
+#### Install Some Global NPM Dependencias:
+If you would like to have the typescript dependencies installed globally you
+can do this as follows:
+
+- npm install -g @types/node typescript
+   - Maybe `sudo` is needed to run the previous command.
 
 
 <!---

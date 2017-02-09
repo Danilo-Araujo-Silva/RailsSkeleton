@@ -22,3 +22,6 @@
 
 #IDEs
 .idea
+
+#NPM or NodeJS files
+node_modules

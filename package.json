@@ -1,0 +1,36 @@
+{
+  "name": "rails_skeleton",
+  "version": "0.0.1",
+  "description": "A skeleton proposal to rails applications.",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Danilo-Araujo-Silva/RailsSkeleton.git"
+  },
+  "keywords": [
+    "ruby",
+    "rails",
+    "ruby_on_rails",
+    "rubyonrails",
+    "skeleton",
+    "npm",
+    "typescript",
+    "typescript-rails"
+  ],
+  "author": "Danilo Araújo Silva",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Danilo-Araujo-Silva/RailsSkeleton/issues"
+  },
+  "homepage": "https://github.com/Danilo-Araujo-Silva/RailsSkeleton#readme",
+  "dependencies": {
+    "@types/node": "^7.0.5",
+    "typescript": "^2.1.6"
+  }
+}

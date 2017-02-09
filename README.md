@@ -5,10 +5,10 @@ A skeleton propostal to Ruby on Rails applications.
 In this skeleton we have:
 - Ruby on Rails 5
 - TypeScript instead of CoffeeScript (already configured and ready to use)
-- HTML5 Boilerplate best practices already included
+- HTML5 Boilerplate best practices already included (TODO yet)
 - A great improvement in the `application.html.erb`
   (with the option to overrides several sections of the page
-  and not the body only)
+  and not the body only) (TODO yet)
 
 ## Installation
 

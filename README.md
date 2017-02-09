@@ -81,7 +81,11 @@ can do this as follows:
 ## Usage
 
 ### Development Mode
+- guard
+  - Run this command in one terminal (this enable the capability to auto-reload
+  the browser when have have file changes)
 - bin/rails server
+  - Run this in another terminal
 
 ### Production Mode
 - RAILS_ENV=production bin/rake secret

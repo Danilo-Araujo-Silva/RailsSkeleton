@@ -81,9 +81,11 @@ can do this as follows:
 ### Development Mode
 - bin/rails server
 ### Production Mode
-- RAILS_ENV=production rake secret
+- RAILS_ENV=production bin/rake secret
  - This secret will be used in the following steps.
-
+- RAILS_ENV=production bin/rake assets:clean
+- RAILS_ENV=production bin/rake assets:precompile
+- RAILS_ENV=production RAILS_SERVE_STATIC_FILES=true SECRET_KEY_BASE={secret key} bin/rails server
 
 <!---
 This README would normally document whatever steps are necessary to get the

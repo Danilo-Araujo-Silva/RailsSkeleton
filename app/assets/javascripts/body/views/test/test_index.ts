@@ -1,3 +1,4 @@
+//= require test
 async function slow() {
     return new Promise(function(resolve, reject) {
         setTimeout(function() {

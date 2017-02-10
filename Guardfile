@@ -22,7 +22,7 @@ guard 'livereload' do
     sass: :css,
     js: :js,
     coffee: :js,
-    typescript: :js,
+    ts: :js,
     html: :html,
     png: :png,
     gif: :gif,

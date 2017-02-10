@@ -1,0 +1,1 @@
+ System.import('/assets/body/angular/main').catch(function(err){ console.error(err); });

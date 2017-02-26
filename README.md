@@ -19,7 +19,7 @@ In this skeleton we have:
 ### Simple Installation
 - git clone https://github.com/Danilo-Araujo-Silva/RailsSkeleton.git
 - cd RailsSkeleton
-- bundle install
+- bin/bundle install
 - npm install
 
 ### Detailed Installation
@@ -75,7 +75,7 @@ will be placed in the `node_modules` folder (already ignored by `.gititnore`).
 
 - npm install
   
-#### Install Some Global NPM Dependencias:
+#### Install Some Global NPM Dependencies:
 If you would like to have the typescript dependencies installed globally you
 can do this as follows:
 
@@ -89,6 +89,8 @@ can do this as follows:
 ## Usage
 
 ### Development Mode
+- bin/rake db:migrate
+<!--- bin/rake db:seed -->
 - guard
   - Run this command in one terminal (this enable the capability to auto-reload
   the browser when have have file changes)
@@ -96,6 +98,8 @@ can do this as follows:
   - Run this in another terminal
 
 ### Production Mode
+- RAILS_ENV=production bin/rake db:migrate
+<!--- RAILS_ENV=production bin/rake db:seed -->
 - RAILS_ENV=production bin/rake secret
  - This secret will be used in the following steps.
 - RAILS_ENV=production bin/rake assets:clean

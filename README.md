@@ -82,6 +82,10 @@ can do this as follows:
 - npm install -g @types/node typescript
    - Maybe `sudo` is needed to run the previous command.
    
+#### Update All Global NPM Dependencies:
+- npm update -g
+  - Maybe `sudo` is needed to run the previous command.
+   
 ## Usage
 
 ### Development Mode

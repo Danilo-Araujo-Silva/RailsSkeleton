@@ -1,0 +1,22 @@
+{
+  "compilerOptions": {
+    "baseUrl": "",
+    "declaration": false,
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "lib": [
+      "es7",
+      "dom"
+    ],
+    "mapRoot": "./app/assets/javascripts/",
+    "module": "es2015",
+    "moduleResolution": "node",
+    "outDir": "app/assets/transpiled",
+    "sourceMap": true,
+    "target": "es5",
+    "allowJs": true,
+    "typeRoots": [
+      "node_modules/@types"
+    ]
+  }
+}

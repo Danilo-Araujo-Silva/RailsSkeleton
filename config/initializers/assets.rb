@@ -14,6 +14,8 @@ Rails.application.config.assets.version = '1.0'
 Rails.application.config.assets.precompile += %w( rails/* )
 javascript_body_views_path = "app/assets/javascripts/body/views"
 Rails.application.config.assets.paths << javascript_body_views_path
+Rails.application.config.assets.paths << Rails.root.join('node_modules')
+puts Rails.application.config.assets.paths
 Dir.glob(
   Rails.root.join(javascript_body_views_path, "**/*.ts")
 ) {

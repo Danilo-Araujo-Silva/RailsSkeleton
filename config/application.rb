@@ -14,7 +14,7 @@ module RailsSkeleton
 
     #Typescript
     TypeScript::Src.use_external_tsc = true
-    Typescript::Rails::Compiler.default_options = %w(--target es5 --lib es7,dom --moduleResolution node --sourceMap true --emitDecoratorMetadata true --experimentalDecorators true --noImplicitAny true --suppressImplicitAnyIndexErrors true)
+    Typescript::Rails::Compiler.default_options = %w(--target es5 --lib es7,dom --moduleResolution node --sourceMap true --emitDecoratorMetadata true --experimentalDecorators true --noImplicitAny true --suppressImplicitAnyIndexErrors true --module system)
     config.app_generators.javascript_engine :typescript
     config.assets.enabled = true
   end

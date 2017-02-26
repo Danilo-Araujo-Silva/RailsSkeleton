@@ -14,7 +14,4 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require modernizr/2.8.3/modernizr-2.8.3-respond-1.4.2.min
-//= require node_modules/core-js/client/shim.min
-//= require node_modules/zone.js/dist/zone.js
-//= require node_modules/systemjs/dist/system.src.js
 //= require_tree ../head

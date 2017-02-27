@@ -1,1 +1,1 @@
-//= require_tree ../body/angular/boostrap
+//= require_tree ../body/angular/bootstrap

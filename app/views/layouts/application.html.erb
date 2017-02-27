@@ -67,7 +67,7 @@
                 <%= yield(:head_js_before) %>
               <% else %>
               <% end %>
-              <%= javascript_include_tag 'application/head', 'data-turbolinks-track': 'reload' %>
+              <%= javascript_include_tag 'dist/main/rails/head', 'data-turbolinks-track': 'reload' %>
               <% if content_for?(:head_js_after) %>
                 <%= yield(:head_js_after) %>
               <% else %>
@@ -97,7 +97,7 @@
             <% if content_for?(:body_js) %>
               <%= yield(:body_js) %>
             <% else %>
-              <%= javascript_include_tag 'application/body', 'data-turbolinks-track': 'reload' %>
+              <%= javascript_include_tag 'dist/main/rails/body', 'data-turbolinks-track': 'reload' %>
             <% end %>
           </body>
         <% end %>

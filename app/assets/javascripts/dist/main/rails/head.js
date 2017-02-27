@@ -15,4 +15,5 @@
 //= require turbolinks
 //= require modernizr/2.8.3/modernizr-2.8.3-respond-1.4.2.min
 //= require systemjs/dist/system.src.js
-//= require ../body/configuration/polyfill/polyfills
+//= require ../body/configuration/polyfill/polyfills 
+//# sourceMappingURL=/media/data1/importante/danilo/cloud/github/RailsSkeleton/app/assets/javascripts/src/rails/head.js.map

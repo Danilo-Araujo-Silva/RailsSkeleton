@@ -13,9 +13,9 @@ module RailsSkeleton
     # -- all .rb files in that directory are automatically loaded.
 
     #Typescript
-    TypeScript::Src.use_external_tsc = true
-    Typescript::Rails::Compiler.default_options = %w(--lib ES7,DOM)
-    config.app_generators.javascript_engine :typescript
+    #TypeScript::Src.use_external_tsc = true
+    #Typescript::Rails::Compiler.default_options = %w(--lib ES7,DOM)
+    #config.app_generators.javascript_engine :typescript
     config.assets.enabled = true
   end
 end

@@ -1,23 +1,31 @@
 {
   "compilerOptions": {
-    "sourceMap": true,
+    "baseUrl": "",
     "declaration": false,
-    "moduleResolution": "node",
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
     "lib": [
       "es7",
       "dom"
     ],
-    "outDir": "./test/spec",
+    "mapRoot": "./test",
     "module": "commonjs",
+    "moduleResolution": "node",
+    "outDir": "../dist/test",
+    "sourceMap": true,
     "target": "es6",
-    "baseUrl": "",
+    "typeRoots": [
+      "../../../../node_modules/@types"
+    ],
     "types": [
       "jasmine",
       "node"
     ]
   },
+  "exclude": [
+    "**/*.spec.ts",
+    "test/**/*.ts"
+  ],
   "files": [
     "test/bootstrap.ts"
   ],

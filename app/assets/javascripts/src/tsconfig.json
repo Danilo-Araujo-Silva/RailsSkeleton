@@ -1,0 +1,25 @@
+{
+  "compilerOptions": {
+    "allowJs": true,
+    "baseUrl": "",
+    "declaration": false,
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "lib": [
+      "es7",
+      "dom"
+    ],
+    "mapRoot": "./",
+    "moduleResolution": "node",
+    "outDir": "../dist/main",
+    "sourceMap": true,
+    "target": "es5",
+    "typeRoots": [
+      "../../../../node_modules/@types"
+    ]
+  },
+  "exclude": [
+    "**/*.spec.ts",
+    "test/**/*.ts"
+  ]
+}

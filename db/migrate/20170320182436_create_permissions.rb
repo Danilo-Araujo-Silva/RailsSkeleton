@@ -3,7 +3,7 @@ class CreatePermissions < ActiveRecord::Migration[5.0]
     create_table :permissions do |t|
       t.integer :parent, null: true, index: true, comment: 'Id of the parent permission, if exists.'
       t.string :breadcrumb, null: false, index: true, comment: 'Breadcrumb of the permission.'
-      t.string :title, null: false, index: true, comment: 'Title of the permission.'
+      t.string :name, null: false, index: true, comment: 'Name of the permission.'
       t.string :description, null: false, comment: 'Description of the permission.'
 
       t.integer :created_by, null: false, index: false, comment: 'Id of the user who created the record.'

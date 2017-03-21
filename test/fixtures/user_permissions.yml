@@ -1,17 +1,15 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  parent: 1
-  breadcrumb: MyString
-  name: MyString
-  description: MyString
+  user: one
+  permission: one
+  grant: MyString
   created_by: 1
   updated_by: 1
 
 two:
-  parent: 1
-  breadcrumb: MyString
-  name: MyString
-  description: MyString
+  user: two
+  permission: two
+  grant: MyString
   created_by: 1
   updated_by: 1

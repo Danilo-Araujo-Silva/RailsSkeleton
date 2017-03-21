@@ -8,7 +8,6 @@
 
 User.create(
   {
-    id: 1,
     username: 'root',
     name: 'Root User',
     email: 'root@localhost',
@@ -24,6 +23,16 @@ Permission.create(
     breadcrumb: null, # Automatically computed.
     name: 'root',
     description: 'Most powerfull permission.',
+    created_by: 1,
+    updated_by: 1
+  }
+)
+
+UserPermission.create(
+  {
+    user_id: 1,
+    permission_id: 1,
+    grant: 'all',
     created_by: 1,
     updated_by: 1
   }

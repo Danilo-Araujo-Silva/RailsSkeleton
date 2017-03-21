@@ -6,7 +6,7 @@ class Permission < ApplicationRecord
   before_validation :_sanitize
 
   def _sanitize
-    if !(self.created_by > 0)
+    if self.created_by.nil?
       self.created_by = 1
     end
 

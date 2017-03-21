@@ -17,7 +17,7 @@ class UsersPermissionsControllerTest < ActionDispatch::IntegrationTest
 
   test "should create user_permission" do
     assert_difference('UserPermission.count') do
-      post users_permissions_url, params: {user_permission: {grant: @user_permission.grant, permission_id: @user_permission.permission_id, user_id: @user_permission.user_id } }
+      post users_permissions_url, params: { user_permission: {  } }
     end
 
     assert_redirected_to user_permission_url(UserPermission.last)
@@ -34,7 +34,7 @@ class UsersPermissionsControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should update user_permission" do
-    patch user_permission_url(@user_permission), params: {user_permission: {grant: @user_permission.grant, permission_id: @user_permission.permission_id, user_id: @user_permission.user_id } }
+    patch user_permission_url(@user_permission), params: { user_permission: {  } }
     assert_redirected_to user_permission_url(@user_permission)
   end
 

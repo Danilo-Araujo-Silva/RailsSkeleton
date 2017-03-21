@@ -5,10 +5,6 @@
 <table>
   <thead>
     <tr>
-      <th>Parent</th>
-      <th>Breadcrumb</th>
-      <th>Name</th>
-      <th>Description</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -16,10 +12,6 @@
   <tbody>
     <% @permissions.each do |permission| %>
       <tr>
-        <td><%= permission.parent_id %></td>
-        <td><%= permission.breadcrumb %></td>
-        <td><%= permission.name %></td>
-        <td><%= permission.description %></td>
         <td><%= link_to 'Show', permission %></td>
         <td><%= link_to 'Edit', edit_permission_path(permission) %></td>
         <td><%= link_to 'Destroy', permission, method: :delete, data: { confirm: 'Are you sure?' } %></td>

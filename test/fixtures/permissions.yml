@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  parent: one
+  breadcrumb: MyString
+  name: MyString
+  description: MyString
+
+two:
+  parent: two
+  breadcrumb: MyString
+  name: MyString
+  description: MyString

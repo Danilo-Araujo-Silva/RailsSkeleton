@@ -6,34 +6,37 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-User.create(
+User.create!(
   {
+    id: 1,
     username: 'root',
     name: 'Root',
     email: 'root@localhost',
     password: 'password',
-    created_by: nil,
-    updated_by: nil
+    created_by_id: 1,
+    updated_by_id: 1
   }
 )
 
-Permission.create(
+Permission.create!(
   {
+    id: 1,
     parent_id: nil,
     breadcrumb: '1',
     name: 'root',
     description: 'Root permission.',
-    created_by: 1,
-    updated_by: 1
+    created_by_id: 1,
+    updated_by_id: 1
   }
 )
 
-UserPermission.create(
+UserPermission.create!(
   {
+    id: 1,
     user_id: 1,
     permission_id: 1,
     grant: 'all',
-    created_by: 1,
-    updated_by: 1
+    created_by_id: 1,
+    updated_by_id: 1
   }
 )

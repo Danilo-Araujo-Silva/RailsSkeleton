@@ -14,27 +14,27 @@ ActiveRecord::Schema.define(version: 20170321152940) do
 
   create_table "permissions", force: :cascade do |t|
     t.integer  "parent_id"
-    t.string   "breadcrumb",  null: false
-    t.string   "name",        null: false
-    t.string   "description", null: false
-    t.integer  "created_by",  null: false
-    t.integer  "updated_by",  null: false
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+    t.string   "breadcrumb",    null: false
+    t.string   "name",          null: false
+    t.string   "description",   null: false
+    t.integer  "created_by_id", null: false
+    t.integer  "updated_by_id", null: false
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
     t.index ["breadcrumb"], name: "index_permissions_on_breadcrumb"
     t.index ["name"], name: "index_permissions_on_name"
     t.index ["parent_id"], name: "index_permissions_on_parent_id"
   end
 
   create_table "users", force: :cascade do |t|
-    t.string   "username",   null: false
-    t.string   "name",       null: false
-    t.string   "email",      null: false
-    t.string   "password",   null: false
-    t.integer  "created_by"
-    t.integer  "updated_by"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.string   "username",      null: false
+    t.string   "name",          null: false
+    t.string   "email",         null: false
+    t.string   "password",      null: false
+    t.integer  "created_by_id"
+    t.integer  "updated_by_id"
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
     t.index ["email"], name: "index_users_on_email"
     t.index ["name"], name: "index_users_on_name"
     t.index ["username"], name: "index_users_on_username"
@@ -44,8 +44,8 @@ ActiveRecord::Schema.define(version: 20170321152940) do
     t.integer  "user_id",       null: false
     t.integer  "permission_id", null: false
     t.string   "grant",         null: false
-    t.integer  "created_by",    null: false
-    t.integer  "updated_by",    null: false
+    t.integer  "created_by_id", null: false
+    t.integer  "updated_by_id", null: false
     t.datetime "created_at",    null: false
     t.datetime "updated_at",    null: false
     t.index ["grant"], name: "index_users_permissions_on_grant"

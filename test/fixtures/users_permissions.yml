@@ -4,8 +4,12 @@ one:
   user: one
   permission: one
   grant: MyString
+  created_by_id: 1
+  updated_by_id: 1
 
 two:
   user: two
   permission: two
   grant: MyString
+  created_by_id: 1
+  updated_by_id: 1

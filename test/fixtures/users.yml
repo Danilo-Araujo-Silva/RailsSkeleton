@@ -5,9 +5,13 @@ one:
   name: MyString
   email: MyString
   password: MyString
+  created_by_id: 1
+  updated_by_id: 1
 
 two:
   username: MyString
   name: MyString
   email: MyString
   password: MyString
+  created_by_id: 1
+  updated_by_id: 1

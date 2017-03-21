@@ -6,8 +6,8 @@ class CreatePermissions < ActiveRecord::Migration[5.0]
       t.string :name, null: false, index: true, comment: 'Name of the permission.'
       t.string :description, null: false, comment: 'Description of the permission.'
 
-      t.integer :created_by, null: false, index: false, comment: 'Id of the user who created the record.'
-      t.integer :updated_by, null: false, index: false, comment: 'Id of the user who did the last change in the record.'
+      t.integer :created_by_id, null: false, index: false, comment: 'Id of the user who created the record.'
+      t.integer :updated_by_id, null: false, index: false, comment: 'Id of the user who did the last change in the record.'
 
       t.timestamps
     end

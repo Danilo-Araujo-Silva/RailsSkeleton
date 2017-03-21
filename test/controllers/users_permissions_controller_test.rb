@@ -11,36 +11,36 @@ class UsersPermissionsControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should get new" do
-    get new_users_permissions_url
+    get new_user_permission_url
     assert_response :success
   end
 
   test "should create user_permission" do
     assert_difference('UserPermission.count') do
-      post users_permissions_url, params: {user_permission: {created_by: @user_permission.created_by, grant: @user_permission.grant, permission_id: @user_permission.permission_id, updated_by: @user_permission.updated_by, user_id: @user_permission.user_id } }
+      post users_permissions_url, params: {user_permission: {grant: @user_permission.grant, permission_id: @user_permission.permission_id, user_id: @user_permission.user_id } }
     end
 
-    assert_redirected_to users_permissions_url(UserPermission.last)
+    assert_redirected_to user_permission_url(UserPermission.last)
   end
 
   test "should show user_permission" do
-    get users_permissions_url(@user_permission)
+    get user_permission_url(@user_permission)
     assert_response :success
   end
 
   test "should get edit" do
-    get edit_users_permissions_url(@user_permission)
+    get edit_user_permission_url(@user_permission)
     assert_response :success
   end
 
   test "should update user_permission" do
-    patch users_permissions_url(@user_permission), params: {user_permission: {created_by: @user_permission.created_by, grant: @user_permission.grant, permission_id: @user_permission.permission_id, updated_by: @user_permission.updated_by, user_id: @user_permission.user_id } }
-    assert_redirected_to users_permissions_url(@user_permission)
+    patch user_permission_url(@user_permission), params: {user_permission: {grant: @user_permission.grant, permission_id: @user_permission.permission_id, user_id: @user_permission.user_id } }
+    assert_redirected_to user_permission_url(@user_permission)
   end
 
   test "should destroy user_permission" do
     assert_difference('UserPermission.count', -1) do
-      delete users_permissions_url(@user_permission)
+      delete user_permission_url(@user_permission)
     end
 
     assert_redirected_to users_permissions_url

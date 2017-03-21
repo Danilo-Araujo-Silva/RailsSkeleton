@@ -9,20 +9,20 @@
 User.create(
   {
     username: 'root',
-    name: 'Root User',
+    name: 'Root',
     email: 'root@localhost',
-    password: '8cd824c700eb0c125fff40c8c185d14c5dfe7f32814afac079ba7c20d93bc3c082193243c420fed22ef2474fbb85880e7bc1ca772150a1f759f8ddebca77711f', # SHA-3 hash with salt.
-    # created_by: null,
-    # updated_by: null
+    password: 'password',
+    created_by: nil,
+    updated_by: nil
   }
 )
 
 Permission.create(
   {
-    # parent: null,
-    breadcrumb: '1', # Automatically computed.
+    parent_id: nil,
+    breadcrumb: '1',
     name: 'root',
-    description: 'Most powerfull permission.',
+    description: 'Root permission.',
     created_by: 1,
     updated_by: 1
   }

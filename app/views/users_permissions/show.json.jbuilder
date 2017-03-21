@@ -1,0 +1,1 @@
+json.partial! "users_permissions/user_permission", user_permission: @user_permission

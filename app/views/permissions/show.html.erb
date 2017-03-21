@@ -2,7 +2,7 @@
 
 <p>
   <strong>Parent:</strong>
-  <%= @permission.parent %>
+  <%= @permission.parent_id %>
 </p>
 
 <p>
@@ -18,16 +18,6 @@
 <p>
   <strong>Description:</strong>
   <%= @permission.description %>
-</p>
-
-<p>
-  <strong>Craeted by:</strong>
-  <%= @permission.created_by %>
-</p>
-
-<p>
-  <strong>Updated by:</strong>
-  <%= @permission.updated_by %>
 </p>
 
 <%= link_to 'Edit', edit_permission_path(@permission) %> |

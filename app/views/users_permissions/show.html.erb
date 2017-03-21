@@ -15,15 +15,5 @@
   <%= @user_permission.grant %>
 </p>
 
-<p>
-  <strong>Created by:</strong>
-  <%= @user_permission.created_by %>
-</p>
-
-<p>
-  <strong>Updated by:</strong>
-  <%= @user_permission.updated_by %>
-</p>
-
-<%= link_to 'Edit', edit_users_permission_path(@user_permission) %> |
+<%= link_to 'Edit', edit_users_permissions_path(@user_permission) %> |
 <%= link_to 'Back', users_permissions_path %>

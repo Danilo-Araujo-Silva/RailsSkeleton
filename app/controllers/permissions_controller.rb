@@ -69,6 +69,6 @@ class PermissionsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def permission_params
-      params.require(:permission).permit(:parent, :breadcrumb, :name, :description)
+      params.require(:permission).permit(:parent_id, :breadcrumb, :name, :description)
     end
 end

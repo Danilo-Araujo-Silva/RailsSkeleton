@@ -15,4 +15,12 @@ class ApplicationRecord < ActiveRecord::Base
     self.updated_by_id = 1
   end
 
+  def created_by
+    User.find(self.created_by_id)
+  end
+
+  def updated_by
+    User.find(self.updated_by_id)
+  end
+
 end

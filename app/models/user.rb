@@ -1,7 +1,7 @@
 class User < ApplicationRecord
 
   def sanitize
-    super.sanitize
+    super
   end
 
 end

@@ -9,4 +9,5 @@ class Permission < ApplicationRecord
       self.parent_id = self.parent.id
     end
   end
+
 end

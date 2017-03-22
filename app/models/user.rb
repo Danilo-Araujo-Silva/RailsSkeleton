@@ -20,12 +20,15 @@ class User < ApplicationRecord
 
   def _sanitize
     super
+    self.email = self.email.strip.downcase
+    if self.username.nil?
+      self.username = self.email
+    end
     self.username = self.username.strip.downcase
     self.name.strip!
-    self.email = self.email.strip.downcase
 
-    self.password.strip!
-    self.password = SHA3::Digest::SHA256.new().update(self.password).hexdigest
+    # self.encrypted_password.strip!
+    # self.encrypted_password = SHA3::Digest::SHA256.new().update(self.password).hexdigest
   end
 
 end

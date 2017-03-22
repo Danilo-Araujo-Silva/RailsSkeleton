@@ -11,9 +11,10 @@ if (!User.exists?(1))
     {
       id: 1,
       username: 'root',
-      name: 'Root',
+      name: 'Root Administrator',
       email: 'root@127.0.0.1',
-      encrypted_password: 'password',
+      password: 'k.y23B^4',
+      password_confirmation: 'k.y23B^4',
       created_by_id: 1,
       updated_by_id: 1
     }

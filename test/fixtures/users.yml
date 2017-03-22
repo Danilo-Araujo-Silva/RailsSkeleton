@@ -5,7 +5,8 @@ one:
   username: 'root'
   name: 'Root'
   email: 'root@127.0.0.1'
-  encrypted_password: 'password'
+  password: 'SZ5J%e!w'
+  password_confirmation: 'SZ5J%e!w'
   created_by_id: 1
   updated_by_id: 1
 
@@ -13,6 +14,7 @@ two:
   username: 'two'
   name: 'User Two'
   email: 'two@example.com'
-  encrypted_password: '123456'
+  password: '#dGYD3[G'
+  password_confirmation: '#dGYD3[G'
   created_by_id: 1
   updated_by_id: 1

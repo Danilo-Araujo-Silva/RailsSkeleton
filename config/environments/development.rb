@@ -54,4 +54,7 @@ Rails.application.configure do
 
   # Add Rack::LiveReload to the bottom of the middleware stack with the default options:
   config.middleware.insert_after ActionDispatch::Static, Rack::LiveReload
+
+  # Mailer default url for Devise.
+  config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }
 end

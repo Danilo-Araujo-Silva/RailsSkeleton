@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  root to: "public#index"
   resources :users_permissions
   resources :permissions
   resources :users

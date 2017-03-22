@@ -5,7 +5,7 @@ class User < ApplicationRecord
   validates_email_format_of :email, { message: 'invalid.' }
   validates :email, uniqueness: { message: 'has already been taken.' }
   validates :encrypted_password, presence: { message: "cannot be empty." }
-  
+
   # Devise modules.
   devise :database_authenticatable,
     :registerable,

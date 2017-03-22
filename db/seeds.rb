@@ -13,7 +13,7 @@ if (!User.exists?(1))
       username: 'root',
       name: 'Root',
       email: 'root@127.0.0.1',
-      password: 'password',
+      encrypted_password: 'password',
       created_by_id: 1,
       updated_by_id: 1
     }

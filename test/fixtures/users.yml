@@ -10,9 +10,9 @@ one:
   updated_by_id: 1
 
 two:
-  username: MyString
-  name: MyString
-  email: MyString
-  password: MyString
+  username: 'two'
+  name: 'User Two'
+  email: 'two@example.com'
+  password: '123456'
   created_by_id: 1
   updated_by_id: 1

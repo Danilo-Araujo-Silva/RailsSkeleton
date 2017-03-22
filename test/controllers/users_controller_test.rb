@@ -2,7 +2,13 @@ require 'test_helper'
 
 class UsersControllerTest < ActionDispatch::IntegrationTest
   setup do
-    @user = users(:one)
+    @user = User.new
+    @user.username = Faker::Name.unique.first_name.downcase
+    @user.name = Faker::Name.name
+    @user.email = Faker::Internet.unique.email
+    @user.password = Faker::Lorem.characters(10)
+    @user.created_by_id = 1
+    @user.updated_by_id = 1
   end
 
   test "should get index" do

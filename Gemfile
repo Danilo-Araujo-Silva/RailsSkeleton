@@ -33,15 +33,14 @@ gem 'jbuilder', '~> 2.5'
 # gem 'redis', '~> 3.0'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
-
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
-
 # SHA-3 hashing algorithm
 gem 'sha3'
-
-# validation for e-mails
+# Validation for e-mails
 gem 'validates_email_format_of'
+# Autenthication
+gem 'devise'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

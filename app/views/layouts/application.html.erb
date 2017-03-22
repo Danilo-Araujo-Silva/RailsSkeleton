@@ -12,9 +12,7 @@
     <!--[if lt IE 7]><html class="no-js lt-ie9 lt-ie8 lt-ie7" lang=""><![endif]-->
     <!--[if IE 7]><html class="no-js lt-ie9 lt-ie8" lang=""><![endif]-->
     <!--[if IE 8]><html class="no-js lt-ie9" lang=""><![endif]-->
-    <!--[if gt IE 8]><!-->
-      <html class="no-js" lang="">
-    <!--<![endif]-->
+    <!--[if gt IE 8]><!--><html class="no-js" lang=""><!--<![endif]-->
       <% if content_for?(:html) %>
         <%= yield(:html) %>
       <% else %>
@@ -39,11 +37,11 @@
             <% end %>
 
             <title>
-            <% if content_for?(:title) %>
-              <%= yield(:title) %>
-            <% else %>
-              <%= 'Rails Skeleton' %>
-            <% end %>
+              <% if content_for?(:title) %>
+                <%= yield(:title) %>
+              <% else %>
+                <%= 'Rails Skeleton' %>
+              <% end %>
             </title>
 
             <% if content_for?(:head_css) %>
@@ -53,6 +51,7 @@
                 <%= yield(:head_css_before) %>
               <% else %>
               <% end %>
+              <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
               <%= stylesheet_link_tag  'application', media: 'all', 'data-turbolinks-track': 'reload' %>
               <% if content_for?(:head_css_after) %>
                 <%= yield(:head_css_after) %>
@@ -92,12 +91,47 @@
                 Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.
               </p>
             <![endif]-->
-            <%= yield %>
+            <% if content_for?(:body_header) %>
+              <%= yield(:body_header) %>
+            <% else %>
+              <%= render :partial => 'layouts/header' %>
+            <% end %>
+
+            <% if content_for?(:body_content) %>
+              <%= yield(:body_content) %>
+            <% else %>
+              <main>
+                <p class="notice"><%= notice %></p>
+                <p class="alert"><%= alert %></p>
+
+                <%= yield %>
+              </main>
+            <% end %>
+
+            <% if content_for?(:body_footer) %>
+              <%= yield(:body_footer) %>
+            <% else %>
+              <%= render :partial => 'layouts/footer' %>
+            <% end %>
 
             <% if content_for?(:body_js) %>
               <%= yield(:body_js) %>
             <% else %>
+              <% if content_for?(:body_js_before) %>
+                <%= yield(:body_js_before) %>
+              <% else %>
+              <% end %>
               <%= javascript_include_tag 'application/body', 'data-turbolinks-track': 'reload' %>
+              <% if content_for?(:body_js_after) %>
+                <%= yield(:body_js_after) %>
+              <% else %>
+              <% end %>
+            <% end %>
+
+            <% if @dev %>
+              <pre>
+              <%= @dev.inspect %>
+              </pre>
             <% end %>
           </body>
         <% end %>

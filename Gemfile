@@ -40,6 +40,9 @@ gem 'jbuilder', '~> 2.5'
 # SHA-3 hashing algorithm
 gem 'sha3'
 
+# validation for e-mails
+gem 'validates_email_format_of'
+
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platform: :mri

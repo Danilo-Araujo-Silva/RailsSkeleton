@@ -6,13 +6,13 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-if (!User.find(1))
+if (!User.exists?(1))
   User.create!(
     {
       id: 1,
       username: 'root',
       name: 'Root',
-      email: 'root@localhost',
+      email: 'root@127.0.0.1',
       password: 'password',
       created_by_id: 1,
       updated_by_id: 1
@@ -20,7 +20,7 @@ if (!User.find(1))
   )
 end
 
-if (!Permission.find(1))
+if (!Permission.exists?(1))
   Permission.create!(
     {
       id: 1,
@@ -34,7 +34,7 @@ if (!Permission.find(1))
   )
 end
 
-if (!UserPermission.find(1))
+if (!UserPermission.exists?(1))
   UserPermission.create!(
     {
       id: 1,

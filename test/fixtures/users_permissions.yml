@@ -8,3 +8,9 @@ one:
   created_by_id: 1
   updated_by_id: 1
 
+two:
+  user_id: 2
+  permission_id: 2
+  grant: 'none'
+  created_by_id: 1
+  updated_by_id: 1

@@ -19,4 +19,8 @@ ActiveSupport::Inflector.inflections(:en) do |inflect|
   inflect.irregular 'user_permission', 'users_permissions'
   inflect.irregular 'userPermission', 'usersPermissions'
   inflect.irregular 'UserPermission', 'UsersPermissions'
+
+  inflect.irregular 'user_authentication', 'user_authentications'
+  inflect.irregular 'userAuthentication', 'userAuthentications'
+  inflect.irregular 'UserAuthentication', 'UserAuthentications'
 end

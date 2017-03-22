@@ -13,9 +13,9 @@ class User < ApplicationRecord
     :rememberable,
     :trackable,
     :validatable,
-    # :confirmable,
-    # :lockable,
-    # :timeoutable,
+    :confirmable,
+    :lockable,
+    :timeoutable
     # :omniauthable
 
   def _sanitize

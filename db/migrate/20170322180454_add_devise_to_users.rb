@@ -3,7 +3,7 @@ class AddDeviseToUsers < ActiveRecord::Migration[5.0]
     change_table :users do |t|
       ## Database authenticatable
       # t.string :email, null: false, default: "", comment: "User's e-mail."
-      t.string :encrypted_password, null: false, comment: "User's encrypted password."
+      t.string :encrypted_password, null: false, default: '', comment: "User's encrypted password."
 
       ## Recoverable
       t.string   :reset_password_token, comment: 'Token to reset the password.'
@@ -35,7 +35,7 @@ class AddDeviseToUsers < ActiveRecord::Migration[5.0]
       # t.timestamps null: false
     end
 
-    add_index :users, :email, unique: true, comment: "The user's e-mail should be unique."
+    # add_index :users, :email, unique: true, comment: "The user's e-mail should be unique."
     add_index :users, :reset_password_token, unique: true, comment: "The reset password token should be unique."
     add_index :users, :confirmation_token, unique: true, comment: "The confirmation token shoulb be unique."
     add_index :users, :unlock_token, unique: true, comment: "The unlock token should be unique."

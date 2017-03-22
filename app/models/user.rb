@@ -1,14 +1,22 @@
 class User < ApplicationRecord
-  # Include default devise modules. Others available are:
-  # :confirmable, :lockable, :timeoutable and :omniauthable
-  devise :database_authenticatable, :registerable,
-         :recoverable, :rememberable, :trackable, :validatable
   validates :username, presence: { message: 'cannot be empty.' }, allow_blank: false
   validates :name, presence: { message: 'cannot be empty.'}, allow_blank: false
   validates :email, presence: { message: 'cannot be empty.' }, allow_blank: false
   validates_email_format_of :email, { message: 'invalid.' }
   validates :email, uniqueness: { message: 'has already been taken.' }
-  validates :password, presence: { message: "cannot be empty." }
+  validates :encrypted_password, presence: { message: "cannot be empty." }
+  
+  # Devise modules.
+  devise :database_authenticatable,
+    :registerable,
+    :recoverable,
+    :rememberable,
+    :trackable,
+    :validatable,
+    # :confirmable,
+    # :lockable,
+    # :timeoutable,
+    # :omniauthable
 
   def _sanitize
     super

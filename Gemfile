@@ -43,6 +43,10 @@ gem 'validates_email_format_of'
 gem 'devise'
 # Omniauth
 gem 'omniauth'
+gem 'omniauth-github'
+gem 'omniauth-google'
+gem 'omniauth-facebook'
+gem 'omniauth-twitter'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

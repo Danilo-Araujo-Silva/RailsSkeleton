@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   devise_for :users, :controllers => { :omniauth_callbacks => "users_controller/omniauth_callbacks" }
 
-  root to: "public#index"
+  root to: "users#index"
 
   resources :users_permissions
   resources :permissions

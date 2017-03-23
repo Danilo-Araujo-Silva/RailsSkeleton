@@ -33,7 +33,7 @@ class ApplicationRecord < ActiveRecord::Base
     if exists_created_by_id?
       if (
         self.instance_of?(User) and
-        self.id == 1 # Indicates the root user.
+        self.id == User.users[:root].id # Indicates the root user.
       )
         return self
       end
@@ -48,7 +48,7 @@ class ApplicationRecord < ActiveRecord::Base
     if exists_updated_by_id?
       if (
         self.instance_of?(User) and
-        self.id == 1
+        self.id == User.users[:root].id
       )
         return self
       end
@@ -79,13 +79,13 @@ class ApplicationRecord < ActiveRecord::Base
 
   def sanitize_created_by_id
     if exists_created_by_id?
-      self.created_by_id = 1
+      self.created_by_id = nil unless self.created_by_id > 0
     end
   end
 
   def sanitize_updated_by_id
     if exists_updated_by_id?
-      self.updated_by_id = 1
+      self.updated_by_id = nil unless self.updated_by_id > 0
     end
   end
 

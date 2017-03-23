@@ -19,11 +19,30 @@ class User < ApplicationRecord
     :omniauthable,
     :omniauth_providers => [:google_oauth2]
 
+  @@users = {
+    root: User.find_by_username('root'),
+    developer: User.find_by_username('developer'),
+    administrator: User.find_by_username('administrator'),
+    user: User.find_by_username('user'),
+    public: User.find_by_username('public')
+  }.deep_freeze
+
+  def self.users
+    @@users
+  end
+
+  def users
+    @@users
+  end
+
   def _sanitize
     super
 
     # If is the root user or created by the root user then the confirmation need to be explicit.
-    self.confirm if (self.id == 1 or self.created_by_id == 1)
+    self.confirm if (
+      self.id == User.users[:root].id or
+      self.created_by_id == User.users[:root].id
+    )
 
     self.email = self.email.strip.downcase
     if self.username.nil?
@@ -44,17 +63,29 @@ class User < ApplicationRecord
     unless user
       password = Devise.friendly_token[0,20]
 
-      user = User.new(
-        username: data['email'],
-        name: data['name'],
-        email: data['email'],
-        password: password,
-        password_confirmation: password,
-        created_by_id: 5,
-        updated_by_id: 5
-      )
+      ActiveRecord::Base.transaction do
+        user = User.new(
+          username: data['email'],
+          name: data['name'],
+          email: data['email'],
+          password: password,
+          password_confirmation: password,
+          created_by_id: User.users[:user].id,
+          updated_by_id: User.users[:user].id
+        )
 
-      user.save!
+        user.save!
+
+        user_permission = UserPermission.new(
+          user_id: user.id,
+          permission_id: Permission.permissions[:user].id,
+          grant: '',
+          created_by_id: User.users[:user].id,
+          updated_by_id: User.users[:user].id
+        )
+
+        user_permission.save!
+      end
     end
 
     user

@@ -41,17 +41,19 @@ gem 'sha3'
 gem 'validates_email_format_of'
 # Autenthication
 gem 'devise'
-# Omniauth
+# Social network authentication with Omniauth
 gem 'omniauth'
 gem 'omniauth-github'
 gem "omniauth-google-oauth2"
 gem 'omniauth-facebook'
 gem 'omniauth-linkedin'
 gem 'omniauth-twitter'
+# Payment Gateways with Active Merchant
+gem 'activemerchant'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
-  gem 'byebug', platform: :mri
+  # gem 'byebug', platform: :mri
 
   gem 'faker'
 end

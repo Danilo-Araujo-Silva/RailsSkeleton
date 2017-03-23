@@ -4,6 +4,22 @@ class Permission < ApplicationRecord
 
   #TODO Add breadcrumb methods.
 
+  @@permissions = {
+    root: Permission.find_by_name('root'),
+    developer: Permission.find_by_name('developer'),
+    administrator: Permission.find_by_name('administrator'),
+    user: Permission.find_by_name('user'),
+    public: Permission.find_by_name('public')
+  }.deep_freeze
+
+  def self.permissions
+    @@permissions
+  end
+
+  def permissions
+    @@permissions
+  end
+
   def _sanitize
     super
 

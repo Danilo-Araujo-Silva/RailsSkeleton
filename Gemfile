@@ -44,8 +44,9 @@ gem 'devise'
 # Omniauth
 gem 'omniauth'
 gem 'omniauth-github'
-gem 'omniauth-google'
+gem "omniauth-google-oauth2"
 gem 'omniauth-facebook'
+gem 'omniauth-linkedin'
 gem 'omniauth-twitter'
 
 group :development, :test do

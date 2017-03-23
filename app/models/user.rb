@@ -16,13 +16,14 @@ class User < ApplicationRecord
     :confirmable,
     :lockable,
     :timeoutable,
-    :omniauthable
+    :omniauthable,
+    :omniauth_providers => [:google_oauth2]
 
   def _sanitize
     super
 
     # If is the root user or created by the root user then the confirmation need to be explicit.
-    self.confirm if (self.id == 1 or self.parent_id == 1)
+    self.confirm if (self.id == 1 or self.created_by_id == 1)
 
     self.email = self.email.strip.downcase
     if self.username.nil?
@@ -34,6 +35,29 @@ class User < ApplicationRecord
 
   def _validate
     super
+  end
+
+  def self.from_omniauth(access_token)
+    data = access_token.info
+    user = User.where(:email => data["email"]).first
+
+    unless user
+      password = Devise.friendly_token[0,20]
+
+      user = User.new(
+        username: data['email'],
+        name: data['name'],
+        email: data['email'],
+        password: password,
+        password_confirmation: password,
+        created_by_id: 5,
+        updated_by_id: 5
+      )
+
+      user.save!
+    end
+
+    user
   end
 
 end

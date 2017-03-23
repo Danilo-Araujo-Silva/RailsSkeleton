@@ -30,6 +30,10 @@ class AddDeviseToUsers < ActiveRecord::Migration[5.0]
       t.string   :unlock_token, comment: "Token to unlock the account if it's locked" # Only if unlock strategy is :email or :both
       t.datetime :locked_at, comment: 'Datetime when the account was locked.'
 
+      ## Omniauth
+      t.string :provider, comment: 'Provider for omniauth authentication. Ex.: github.'
+      t.string :uid, comment: "User's uid on the provider."
+
 
       # Uncomment below if timestamps were not included in your original model.
       # t.timestamps null: false
@@ -39,6 +43,7 @@ class AddDeviseToUsers < ActiveRecord::Migration[5.0]
     add_index :users, :reset_password_token, unique: true, comment: "The reset password token should be unique."
     add_index :users, :confirmation_token, unique: true, comment: "The confirmation token should be unique."
     add_index :users, :unlock_token, unique: true, comment: "The unlock token should be unique."
+    add_index :users, [:provider, :uid], unique: true, comment: "The user's uid on a provider should be unique."
   end
 
   def self.down

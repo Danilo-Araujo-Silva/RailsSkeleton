@@ -10,5 +10,7 @@ class CreateUsersPermissions < ActiveRecord::Migration[5.0]
 
       t.timestamps
     end
+
+    add_index :users_permissions, [:user_id, :permission_id], unique: true, comment: 'An user can have some permission only once.'
   end
 end

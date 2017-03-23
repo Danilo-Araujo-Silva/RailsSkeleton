@@ -37,7 +37,7 @@ class AddDeviseToUsers < ActiveRecord::Migration[5.0]
 
     # add_index :users, :email, unique: true, comment: "The user's e-mail should be unique."
     add_index :users, :reset_password_token, unique: true, comment: "The reset password token should be unique."
-    add_index :users, :confirmation_token, unique: true, comment: "The confirmation token shoulb be unique."
+    add_index :users, :confirmation_token, unique: true, comment: "The confirmation token should be unique."
     add_index :users, :unlock_token, unique: true, comment: "The unlock token should be unique."
   end
 

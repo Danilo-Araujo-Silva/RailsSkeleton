@@ -41,6 +41,8 @@ gem 'sha3'
 gem 'validates_email_format_of'
 # Autenthication
 gem 'devise'
+# Omniauth
+gem 'omniauth'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

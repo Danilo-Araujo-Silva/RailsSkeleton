@@ -63,7 +63,7 @@ if (!User.exists?(1))
       ]
     )
 
-    Permission.create!(
+    Permission.create(
       [
         {
           id: 1,
@@ -114,7 +114,7 @@ if (!User.exists?(1))
           id: 1,
           user_id: 1,
           permission_id: 1,
-          grant: '<',
+          grant: '<=>',
           created_by_id: 1,
           updated_by_id: 1
         },
@@ -153,6 +153,4 @@ if (!User.exists?(1))
       ]
     )
   end
-
-  puts 'Seeds finished!'
 end

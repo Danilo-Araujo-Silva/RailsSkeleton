@@ -3,7 +3,6 @@
 one:
   id: 1
   parent_id: nil
-  breadcrumb: '1'
   name: 'root'
   description: 'Root permission.'
   created_by_id: 1
@@ -11,7 +10,6 @@ one:
 
 two:
   parent_id: 1
-  breadcrumb: '1.1'
   name: 'test 1'
   description: 'Test 1 permission.'
   created_by_id: 1

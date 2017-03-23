@@ -15,20 +15,25 @@ class User < ApplicationRecord
     :validatable,
     :confirmable,
     :lockable,
-    :timeoutable
-    # :omniauthable
+    :timeoutable,
+    :omniauthable
 
   def _sanitize
     super
+
+    # If is the root user or created by the root user then the confirmation need to be explicit.
+    self.confirm if (self.id == 1 or self.parent_id == 1)
+
     self.email = self.email.strip.downcase
     if self.username.nil?
       self.username = self.email
     end
     self.username = self.username.strip.downcase
     self.name.strip!
+  end
 
-    # self.encrypted_password.strip!
-    # self.encrypted_password = SHA3::Digest::SHA256.new().update(self.password).hexdigest
+  def _validate
+    super
   end
 
 end

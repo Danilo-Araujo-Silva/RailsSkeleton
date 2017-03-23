@@ -46,7 +46,10 @@ class ApplicationRecord < ActiveRecord::Base
 
   def updated_by
     if exists_updated_by_id?
-      if (self.instance_of?(User) and self.id == 1)
+      if (
+        self.instance_of?(User) and
+        self.id == 1
+      )
         return self
       end
 

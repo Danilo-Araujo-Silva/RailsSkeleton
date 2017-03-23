@@ -14,14 +14,12 @@ ActiveRecord::Schema.define(version: 20170322180454) do
 
   create_table "permissions", force: :cascade do |t|
     t.integer  "parent_id"
-    t.string   "breadcrumb",    null: false
     t.string   "name",          null: false
     t.string   "description",   null: false
     t.integer  "created_by_id"
     t.integer  "updated_by_id"
     t.datetime "created_at",    null: false
     t.datetime "updated_at",    null: false
-    t.index ["breadcrumb"], name: "index_permissions_on_breadcrumb"
     t.index ["name"], name: "index_permissions_on_name"
     t.index ["parent_id"], name: "index_permissions_on_parent_id"
   end
@@ -68,6 +66,7 @@ ActiveRecord::Schema.define(version: 20170322180454) do
     t.datetime "updated_at",    null: false
     t.index ["grant"], name: "index_users_permissions_on_grant"
     t.index ["permission_id"], name: "index_users_permissions_on_permission_id"
+    t.index ["user_id", "permission_id"], name: "index_users_permissions_on_user_id_and_permission_id", unique: true
     t.index ["user_id"], name: "index_users_permissions_on_user_id"
   end
 

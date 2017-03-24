@@ -1,0 +1,2 @@
+module Public::ErrorHelper
+end

@@ -1,3 +1,31 @@
+<% if false %>
+  This is a comment.
+  Below we have all sections that we can override.
+  <%= content_for :all do %><% end %>
+  <%= content_for :doctype do %><% end %>
+  <%= content_for :external_html do %><% end %>
+  <%= content_for :html do %><% end %>
+  <%= content_for :external_head do %><% end %>
+  <%= content_for :head_meta do %><% end %>
+  <%= content_for :head_meta_before do %><% end %>
+  <%= content_for :head_meta_after do %><% end %>
+  <%= content_for :head_title do %><% end %>
+  <%= content_for :head_css do %><% end %>
+  <%= content_for :head_css_before do %><% end %>
+  <%= content_for :head_css_after do %><% end %>
+  <%= content_for :head_js do %><% end %>
+  <%= content_for :head_js_before do %><% end %>
+  <%= content_for :head_js_after do %><% end %>
+  <%= content_for :head_other do %><% end %>
+  <%= content_for :external_body do %><% end %>
+  <%= content_for :body_header do %><% end %>
+  <%= content_for :body_main do %><% end %>
+  <%= content_for :body_footer do %><% end %>
+  <%= content_for :body_js do %><% end %>
+  <%= content_for :body_js_before do %><% end %>
+  <%= content_for :body_js_after do %><% end %>
+  <%= content_for :body_dev do %><% end %>
+<end %>
 <% if content_for?(:all) %>
   <%= yield(:all) %>
 <% else %>
@@ -46,10 +74,10 @@
               <% end %>
 
               <title>
-                <% if content_for?(:title) %>
-                  <%= yield(:title) %>
+                <% if content_for?(:head_title) %>
+                  <%= yield(:head_title) %>
                 <% else %>
-                  <%= 'Skeleton' %>
+                  <%= Rails.application.class %>
                 <% end %>
               </title>
 
@@ -93,20 +121,21 @@
             <%= yield(:external_body) %>
           <% else %>
             <body class="<%= controller_name %> <%= action_name %>">
-              <!--[if lt IE 8]>
+              <% if content_for?(:body_header) %>
+                <%= yield(:body_header) %>
+              <% else %>
+                <!--[if lt IE 8]>
                 <p class="outdated-browser">
                   You are using an <strong>outdated</strong> browser.
                   Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.
                 </p>
-              <![endif]-->
-              <% if content_for?(:body_header) %>
-                <%= yield(:body_header) %>
-              <% else %>
+                <![endif]-->
+
                 <%= render :partial => 'layouts/header' %>
               <% end %>
 
-              <% if content_for?(:body_content) %>
-                <%= yield(:body_content) %>
+              <% if content_for?(:body_main) %>
+                <%= yield(:body_main) %>
               <% else %>
                 <%= render :partial => 'layouts/main' %>
               <% end %>
@@ -131,10 +160,14 @@
                 <% end %>
               <% end %>
 
-              <% if @dev %>
+              <% if content_for?(:body_dev) %>
+                <%= yield(:body_dev) %>
+              <% else %>
+                <% if @dev %>
                 <pre>
                   <%= @dev.inspect %>
                 </pre>
+                <% end %>
               <% end %>
             </body>
           <% end %>

@@ -1,13 +1,13 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <style>
-      /* Email styles need to be inline */
-    </style>
-  </head>
-
+<%= content_for :head_meta do %>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<% end %>
+<%= content_for :head_css do %><% end %>
+<%= content_for :head_js do %><% end %>
+<%= content_for :head_other do %><% end %>
+<%= content_for :external_body do %>
   <body>
     <%= yield %>
   </body>
-</html>
+<% end %>
+
+<%= render :partial => 'layouts/application' %>

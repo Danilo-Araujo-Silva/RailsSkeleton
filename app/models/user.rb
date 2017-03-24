@@ -19,15 +19,27 @@ class User < ApplicationRecord
     :omniauthable,
     :omniauth_providers => [:google_oauth2]
 
-  @@users = {
-    root: User.find_by_username('root'),
-    developer: User.find_by_username('developer'),
-    administrator: User.find_by_username('administrator'),
-    user: User.find_by_username('user'),
-    public: User.find_by_username('public')
-  }.deep_freeze
-
   def self.users
+    if defined? @@users
+      return @@users
+    end
+
+    if ARGV.include? 'db:seed'
+      root = User.new
+      root.id = 1
+      @@users = {
+        root: root
+      }
+    else
+      @@users ||= {
+        root: User.find_by_username('root'),
+        developer: User.find_by_username('developer'),
+        administrator: User.find_by_username('administrator'),
+        user: User.find_by_username('user'),
+        public: User.find_by_username('public')
+      }.deep_freeze
+    end
+
     @@users
   end
 
@@ -40,8 +52,10 @@ class User < ApplicationRecord
 
     # If is the root user or created by the root user then the confirmation need to be explicit.
     self.confirm if (
-      self.id == User.users[:root].id or
-      self.created_by_id == User.users[:root].id
+      User.users and (
+        self.id == User.users[:root].id or
+        self.created_by_id == User.users[:root].id
+      )
     )
 
     self.email = self.email.strip.downcase

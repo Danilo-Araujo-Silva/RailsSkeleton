@@ -12,5 +12,4 @@
 	Doctype: HTML5
 
 /* TECHNOLOGY COLOPHON */
-  Ruby, Ruby on Rails, HTML5, CSS3, JavaScript (ES7),
-  TypeScript, Sass
+  Ruby, Ruby on Rails, HTML5, CSS3, JavaScript (ES7), Sass

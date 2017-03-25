@@ -10,6 +10,8 @@
   <%= content_for :head_meta_before do %><% end %>
   <%= content_for :head_meta_after do %><% end %>
   <%= content_for :head_title do %><% end %>
+  <%= content_for :head_title_before do %><% end %>
+  <%= content_for :head_title_after do %><% end %>
   <%= content_for :head_css do %><% end %>
   <%= content_for :head_css_before do %><% end %>
   <%= content_for :head_css_after do %><% end %>
@@ -74,10 +76,18 @@
               <% end %>
 
               <title>
-                <% if content_for?(:head_title) %>
-                  <%= yield(:head_title) %>
+                <% if content_for?(:head_title_before) %>
+                    <%= yield(:head_title_before) %>
                 <% else %>
-                  <%= Rails.application.class %>
+                <% end %>
+                <%= yield(:head_title) %>
+                <% if content_for?(:head_title_after) %>
+                    <%= yield(:head_title_after) %>
+                <% else %>
+                  <% if content_for?(:head_title) %>
+                    <%= ' - ' %>
+                  <% end %>
+                  <%= $application_name %>
                 <% end %>
               </title>
 
@@ -112,6 +122,7 @@
               <% if content_for?(:head_other) %>
                 <%= yield(:head_other) %>
               <% else %>
+                <link rel="icon" href="/image/favicon/favicon.ico">
                 <link rel="apple-touch-icon" href="/image/icon/apple/apple-touch-icon.png">
               <% end %>
             </head>
@@ -125,10 +136,10 @@
                 <%= yield(:body_header) %>
               <% else %>
                 <!--[if lt IE 8]>
-                <p class="outdated-browser">
-                  You are using an <strong>outdated</strong> browser.
-                  Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.
-                </p>
+                  <p class="outdated-browser">
+                    You are using an <strong>outdated</strong> browser.
+                    Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.
+                  </p>
                 <![endif]-->
 
                 <%= render :partial => 'layouts/header' %>
@@ -163,10 +174,10 @@
               <% if content_for?(:body_dev) %>
                 <%= yield(:body_dev) %>
               <% else %>
-                <% if @dev %>
-                <pre>
-                  <%= @dev.inspect %>
-                </pre>
+                <% if $dev %>
+                  <pre>
+                    <%= $dev.inspect %>
+                  </pre>
                 <% end %>
               <% end %>
             </body>

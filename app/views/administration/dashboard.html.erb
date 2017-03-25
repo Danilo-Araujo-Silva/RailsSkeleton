@@ -1,4 +1,6 @@
-<%= render :partial => 'administration/shared/base' %>
+<%= content_for :body_main_content do %>
+  <h1><%= controller_name %> > <%= action_name %></h1>
+  <p>Find me in app/views/<%= controller_name %>/<%= action_name %>.html.erb</p>
+<% end %>
 
-<h1>Administration#dashboard</h1>
-<p>Find me in app/views/administration/dashboard.html.erb</p>
+<%= render 'administration/shared/base' %>

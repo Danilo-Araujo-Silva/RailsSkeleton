@@ -1,14 +1,19 @@
 <main>
   <% if content_for?(:body_main_before) %>
-      <%= yield(:body_main_before) %>
+    <%= yield(:body_main_before) %>
   <% else %>
   <% end %>
+  MAIN - MAIN
   <p class="notice"><%= notice %></p>
   <p class="alert"><%= alert %></p>
 
-  <%= yield %>
+  <% if content_for?(:body_main_content) %>
+    <%= yield(:body_main_content) %>
+  <% else %>
+    <%= yield %>
+  <% end %>
   <% if content_for?(:body_main_after) %>
-      <%= yield(:body_main_after) %>
+    <%= yield(:body_main_after) %>
   <% else %>
   <% end %>
 </main>

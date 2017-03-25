@@ -1,0 +1,16 @@
+<header>
+  <% if content_for?(:body_header_before) %>
+    <%= yield(:body_header_before) %>
+  <% else %>
+  <% end %>
+  <!--[if lt IE 8]>
+    <p class="outdated-browser">
+      You are using an <strong>outdated</strong> browser.
+      Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.
+    </p>
+  <![endif]-->
+  <% if content_for?(:body_header_after) %>
+      <%= yield(:body_header_after) %>
+  <% else %>
+  <% end %>
+</header>

@@ -21,8 +21,14 @@
   <%= content_for :head_other do %><% end %>
   <%= content_for :external_body do %><% end %>
   <%= content_for :body_header do %><% end %>
+  <%= content_for :body_header_before do %><% end %>
+  <%= content_for :body_header_after do %><% end %>
   <%= content_for :body_main do %><% end %>
+  <%= content_for :body_main_before do %><% end %>
+  <%= content_for :body_main_after do %><% end %>
   <%= content_for :body_footer do %><% end %>
+  <%= content_for :body_footer_before do %><% end %>
+  <%= content_for :body_footer_after do %><% end %>
   <%= content_for :body_js do %><% end %>
   <%= content_for :body_js_before do %><% end %>
   <%= content_for :body_js_after do %><% end %>
@@ -135,13 +141,6 @@
               <% if content_for?(:body_header) %>
                 <%= yield(:body_header) %>
               <% else %>
-                <!--[if lt IE 8]>
-                  <p class="outdated-browser">
-                    You are using an <strong>outdated</strong> browser.
-                    Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.
-                  </p>
-                <![endif]-->
-
                 <%= render :partial => 'layouts/header' %>
               <% end %>
 

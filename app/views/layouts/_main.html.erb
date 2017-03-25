@@ -1,6 +1,14 @@
 <main>
+  <% if content_for?(:body_main_before) %>
+      <%= yield(:body_main_before) %>
+  <% else %>
+  <% end %>
   <p class="notice"><%= notice %></p>
   <p class="alert"><%= alert %></p>
 
   <%= yield %>
+  <% if content_for?(:body_main_after) %>
+      <%= yield(:body_main_after) %>
+  <% else %>
+  <% end %>
 </main>

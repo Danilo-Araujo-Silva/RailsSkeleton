@@ -104,7 +104,7 @@
                   <%= yield(:head_css_before) %>
                 <% else %>
                 <% end %>
-                <%= stylesheet_link_tag  'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+                <%= stylesheet_link_tag  'application/application', media: 'all', 'data-turbolinks-track': 'reload' %>
                 <% if content_for?(:head_css_after) %>
                   <%= yield(:head_css_after) %>
                 <% else %>

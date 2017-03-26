@@ -28,6 +28,25 @@
   },
   "homepage": "https://github.com/Danilo-Araujo-Silva/RailsSkeleton#readme",
   "dependencies": {
-    "@types/node": "^7.0.5"
+  },
+  "devDependencies": {
+    "@types/node": "^7.0.5",
+    "animate.css": "^3.5.2",
+    "bootstrap": "4.0.0-alpha.6",
+    "bootstrap-material-design": "^0.5.10",
+    "flat-ui": "^2.1.1",
+    "font-awesome": "^4.7.0",
+    "hover.css": "^2.2.0",
+    "install": "^0.8.7",
+    "material-components-web": "^0.7.0",
+    "material-design-icons": "^3.0.1",
+    "materialize-css": "^0.98.1",
+    "normalize.css": "^5.0.0",
+    "npm": "^4.4.4",
+    "purecss": "^0.6.2",
+    "semantic-ui": "^2.2.9",
+    "antd": "^2.8.2",
+    "bulma": "^0.4.0",
+    "material-ui": "^0.17.1"
   }
 }
